@@ -76,9 +76,9 @@ h1{
 
 .main-content {
     margin-top: 50px;
-    overflow: auto;
     opacity: 1;
     margin: 20px auto;
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /*Side bars*/
