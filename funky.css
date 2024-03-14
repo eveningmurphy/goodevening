@@ -52,6 +52,65 @@
     letter-spacing: 1.5px; /* Letter spacing */
 }
 
+/*funky containers*/
+.pink-container {
+    width: 80%;
+    height: 100%;
+    background-color: #ff61ff; /* Bright pink background */
+    border: 5px solid #00FF00; /* Green border */
+    border-radius: 20px; /* Rounded corners */
+    position: relative;
+    perspective: 1000px; /* Perspective for 3D effect */
+    margin: 50px auto; /* Center container */
+}
+/* Blue Container */
+.blue-container {
+    width: 80%;
+    height: 100%;
+    background-color: #61bfff; /* Light blue background */
+    border: 5px solid #ff00ff; /* Magenta border */
+    border-radius: 20px; /* Rounded corners */
+    position: relative;
+    perspective: 1000px; /* Perspective for 3D effect */
+    margin: 50px auto; /* Center container */
+}
+
+/* Green Container */
+.green-container {
+    width: 80%;
+    height: 100%;
+    background-color: #bfff61; /* Light green background */
+    border: 5px solid #ff61ff; /* Pink border */
+    border-radius: 20px; /* Rounded corners */
+    position: relative;
+    perspective: 1000px; /* Perspective for 3D effect */
+    margin: 50px auto; /* Center container */
+}
+
+/* Yellow Container */
+.yellow-container {
+    width: 80%;
+    height: 100%;
+    background-color: #ffff61; /* Light yellow background */
+    border: 5px solid #6161ff; /* Blue border */
+    border-radius: 20px; /* Rounded corners */
+    position: relative;
+    perspective: 1000px; /* Perspective for 3D effect */
+    margin: 50px auto; /* Center container */
+}
+
+/* Purple Container */
+.purple-container {
+    width: 100%;
+    height: 100%;
+    padding: 20px 20px 20px 20px;
+    background-color: #bf61ff; /* Light purple background */
+    border: 5px solid #61ffb5; /* Light turquoise border */
+    border-radius: 20px; /* Rounded corners */
+    position: relative;
+    perspective: 1000px; /* Perspective for 3D effect */
+}
+
 /*Image nonsense*/
 .round-spin-wacky-image {
     width: 200px; /* Adjust size as needed */

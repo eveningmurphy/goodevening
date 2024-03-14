@@ -8,6 +8,29 @@
     <link rel="icon" type="image/png" href="img/cursed_digital/lovely_day.png">
     <link rel="stylesheet" href="goodevening.css">
     <link rel="stylesheet" href="funky.css">
+    <!-- darksouls font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia&display=swap">
+    <style>
+    .dark-souls-text {
+        font-family: 'UnifrakturMaguntia', sans-serif;
+        font-size: 28px;
+        color: #ff7f00; /* Orange color similar to Dark Souls */
+        text-shadow: 2px 2px 4px rgba(98, 95, 95, 0.6); /* Add a shadow effect */
+    }
+    .dark-souls-bonfire {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        width: 300px; /* Set width of the container */
+        height: 400px; /* Set height of the container */
+        border: 1px solid black; /* Just for demonstration */
+        position: relative; /* Position relative for absolute positioning of child */
+    }
+
+    .dark-souls-bonfire img {
+        position: absolute;
+    }
+    </style>
     <script>
         goodEveningStartup();
     </script>
@@ -27,24 +50,34 @@
     </div>
 
     <div class="main-content">
-        <div class="tab tab-left">
-            <h2>rest at bonfire</h2>
+        <!--rest at bonfire tab-->
+        <div class="tab tab-left" style="background-color: #bf61ff;">
+                <div style="background-image: url('img/cursed_digital/this_hole_is_not_for_everyone.png'); width: 300px; height: 550px; padding: 5px 5px 5px 5px; margin-bottom: 20px;">
+                    <h2 class="dark-souls-text" style="background-image: url('img/video_game/darksouls_bonfire_border.png'); height: 45px; color: white;">rest at bonfire</h2>
+                    <div class="dark-souls-bonfire" style="background-image: url('img/cursed_digital/google_maps_darksouls.png'); background-size: cover; background-position: center; width: 300px; height: 400px;">
+                        <img src="img/jago_assets/darksouls_bonfire.gif" style="position: absolute; top: 30%; left: 30%;">
+                    </div>
+                </div>
             <div style="background-image: url('img/ms_paint/dj_deck_half_2.png'); width: 300px; height: 250px;">
                 <img src="img/ms_paint/record_2.png" class="round-spin-wacky-image" style="margin-top: 70px;">
             </div>
-            <div class="blockquote">
-                <h3>my favourite <a href="https://www.wcostream.tv/" class="loud-yellow">cartoon website</a></h3>
-            </div>
         </div>
+        <!--???? tab-->
         <div class="tab tab-right">
             <h2>continue your journey</h2>
-        </div>
-        <div class="tab-content">
-            <h1 style="background-image: url('img/ms_word_borders/pumpkins.png'); color: yellow; text-shadow: 0 0 5px #000000;">hello, weary traveller!</h1>
-            <h2>take a moment of <span class="loud-green">respite</span> ...</h2>
             <div class="blockquote">
-                <h3>welcome to my stash of digital artefactz<h3>
-                <h2 class="author" style="color: white; background-color: black; width: 220px; float: right;">~ good evening :-) </h2>
+                <h3><a href="https://www.wcostream.tv/" class="loud-yellow">watch some cartoons</a></h3>
+            </div>
+        </div>
+        <!--middle (main) tab-->
+        <div class="tab-content" style="background-color:#61ffb5">
+            <div class="pink-container">
+                <h1 style="background-image: url('img/ms_word_borders/pumpkins.png'); color: yellow; text-shadow: 0 0 5px #000000;">hello, weary traveller!</h1>
+                <h2>take a moment of <span class="loud-green">respite</span> ...</h2>
+                <div class="blockquote">
+                    <h3>welcome to my stash of digital artefactz<h3>
+                    <h2 class="author" style="color: white; background-color: black; width: 220px; float: right;">~ good evening :-) </h2>
+                </div>
             </div>
         </div>
     </div>
