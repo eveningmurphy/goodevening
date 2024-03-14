@@ -52,32 +52,33 @@ h1{
     background-color: #414073; /* Funky color background */
 }
 
-/* Main body styles */
+/*Main body*/
 .background-image {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("img/ms_paint/bg1_2.png");
+    background-image: url("../img/ms_paint/bg1_2.png");
     opacity: 0.5;
     z-index: -1;
     background-size: cover;
 }
 
-.page-container {
+.page-container{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .main-content {
     margin-top: 50px;
-    overflow: auto;
     opacity: 1;
     margin: 20px auto;
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /*Side bars*/
@@ -138,55 +139,4 @@ h1{
     font-style: italic;
     text-align: right;
     margin-top: 0.5em; /* Adjust top margin for author attribution */
-}
-
-/* Element styles */
-body {
-    font-family: monospace;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Change height to min-height */
-    overflow-x: hidden; /* Hide horizontal overflow */
-    overflow-y: auto; /* Enable vertical scrolling */
-}
-
-/* Responsive styles for main content */
-.tab-content h1 {
-    font-size: 20px; /* Decrease font size for small screens */
-}
-
-.links-container {
-    width: 100%; /* Adjust width for small screens */
-    border-radius: 0; /* Remove border radius for small screens */
-}
-
-.links-content {
-    width: 100%; /* Adjust width for small screens */
-    margin: 10px; /* Adjust margin for small screens */
-    font-size: 18px; /* Decrease font size for small screens */
-    text-align: center;
-}
-
-/* Responsive styles for side bars */
-.tab-left,
-.tab-right {
-    width: 100%; /* Adjust width for small screens */
-    margin: 0; /* Remove margin for small screens */
-}
-
-/* Responsive styles for blockquote */
-.blockquote p {
-    font-size: 16px; /* Decrease font size for small screens */
-}
-
-/* Responsive styles for author */
-.author {
-    font-size: 14px; /* Decrease font size for small screens */
-}
-
-/* Responsive styles for Instagram text */
-.instagram-gradient-text {
-    font-size: 18px; /* Decrease font size for small screens */
 }
