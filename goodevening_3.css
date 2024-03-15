@@ -15,7 +15,7 @@ h1 {
 /*Navbar*/
 .navbar {
     opacity: 1;
-    background-color: #333;
+    background-image: url("img/ms_word_borders/trees.png");
     color: #fff;
     padding: 10px;
     border-bottom: 5px solid #6ef75f; /* Funky color border */
