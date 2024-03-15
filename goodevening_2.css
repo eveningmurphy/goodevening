@@ -60,14 +60,13 @@ h1{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../img/ms_paint/bg1_2.png");
+    background-image: url("img/ms_paint/bg1_2.png");
     opacity: 0.5;
     z-index: -1;
     background-size: cover;
 }
 
 .page-container{
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -89,7 +88,7 @@ h1{
     margin-top: 50px;
     overflow: auto;
     opacity: 1;
-    margin: 20px auto;
+    margin: 30px auto;
     border-radius: 10px;
     text-align: center;
     padding: 20px;
@@ -99,14 +98,16 @@ h1{
 .tab-left {
     float: left;
     width: 300px;
-    margin-left: 50px;
+    margin-left: 30px;
+    margin-right: 20px;
     border: 5px solid #22e5f7; /* Funky color border */
     box-shadow: 0 0 20px #22adf7; /* Funky color shadow */
 }
 .tab-right {
     float: right;
     width: 300px;
-    margin-right: 50px;
+    margin-right: 30px;
+    margin-left: 20px;
     border: 5px solid #f79e22; /* Funky color border */
     box-shadow: 0 0 20px #f78222; /* Funky color shadow */
 }

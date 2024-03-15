@@ -6,6 +6,7 @@ body {
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
     height: 100vh; /* Full height of the viewport */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 h1{
     opacity: 1;
