@@ -2,16 +2,14 @@
 body {
     font-family: monospace;
     margin: 0;
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
     height: 100vh; /* Full height of the viewport */
     overflow-y: auto; /* Enable vertical scrolling */
 }
-h1{
+
+h1 {
     opacity: 1;
     font-size: 30px;
-    color:#333;
+    color: #333;
 }
 
 /*Navbar*/
@@ -24,6 +22,7 @@ h1{
     border-radius: 0 0 20px 20px; /* Rounded corners */
     box-shadow: 0 0 20px #50be97; /* Funky color shadow */
 }
+
 .navbar ul {
     list-style-type: none;
     margin: 0;
@@ -66,7 +65,7 @@ h1{
     background-size: cover;
 }
 
-.page-container{
+.page-container {
     top: 0;
     left: 0;
     width: 100%;
@@ -83,6 +82,7 @@ h1{
 
 /*Side bars*/
 .tab {
+    height: 80vh; /* Set height to be larger than viewport */
     background-color: #f9f9f9;
     max-width: 800px;
     margin-top: 50px;
@@ -95,6 +95,7 @@ h1{
     border-radius: 20px; /* Rounded corners */
     background-color: #f9f9f9;
 }
+
 .tab-left {
     float: left;
     width: 300px;
@@ -103,6 +104,7 @@ h1{
     border: 5px solid #22e5f7; /* Funky color border */
     box-shadow: 0 0 20px #22adf7; /* Funky color shadow */
 }
+
 .tab-right {
     float: right;
     width: 300px;
@@ -111,12 +113,13 @@ h1{
     border: 5px solid #f79e22; /* Funky color border */
     box-shadow: 0 0 20px #f78222; /* Funky color shadow */
 }
+
 .tab-content {
-    height: 1000vh;
+    height: 80vh; /* Set height to be larger than viewport */
     background-color: #f9f9f9;
     max-width: 900px;
     margin-top: 50px;
-    overflow: auto;
+    overflow: auto; /* Enable vertical scrolling */
     opacity: 1;
     margin: 20px auto;
     border-radius: 10px;
@@ -135,9 +138,11 @@ h1{
     margin: 1.5em 0; /* Adjust margin as needed */
     padding: 0.5em 1em; /* Adjust padding as needed */
 }
+
 .blockquote p {
     margin: 0; /* Remove default paragraph margins */
 }
+
 .author {
     font-style: italic;
     text-align: right;
