@@ -12,6 +12,16 @@ h1 {
     color: #333;
 }
 
+/*Bit making*/
+/*allow for top left img styles in this*/
+.bit-container{
+    display: flex;
+    background-size: cover;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Position relative for absolute positioning of child */
+}
+
 /*Navbar*/
 .navbar {
     opacity: 1;
