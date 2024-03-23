@@ -4,7 +4,7 @@
     font-family: Impact, sans-serif; /* Funky font family */
     text-shadow: 2px 2px 4px #ff00ff; /* Pink shadow */
     text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 2px; /* Increased letter spacing */
+    letter-spacing: 3px; /* Increased letter spacing */
 }
 
 .loud-yellow {
@@ -25,9 +25,9 @@
 }
 
 .loud-purple {
-    color: #800080; /* Purple */
+    color: #a62aff; /* Purple */
     font-family: "Arial Black", sans-serif; /* Arial Black font */
-    text-shadow: 2px 2px 4px #800080; /* Purple shadow */
+    text-shadow: 2px 2px 4px #a62aff; /* Purple shadow */
     letter-spacing: 2px; /* Letter spacing */
 }
 

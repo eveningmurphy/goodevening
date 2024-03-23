@@ -37,6 +37,38 @@
         font-family: "Comic Sans MS";
         text-shadow: 2px 2px 4px #ff007f;
     }
+    .sidequest-container{
+        position: absolute;
+        z-index: 5; /* Set a high z-index value */
+        top: 80%;
+        width: 85%;
+    }
+    .sidequest-popup{
+        border-radius: 5px 5px 0px 0px;
+        border-top: 2px solid;
+        padding: 1px 0px 0px 0px;
+        height: 51px;
+        background-image: url("img/video_game/pkmn/border_1.png");
+        /* Apply the invert effect to reverse colors */
+        filter: invert(100%);
+        /* Adjust saturation to make the colors more intense */
+        filter: saturate(200%);
+        /* Rotate the hue to shift colors */
+        filter: hue-rotate(90deg);
+        font-family: 'Press Start 2P', cursive; /* Use a pixelated font */
+        font-size: 24px; /* Adjust font size as needed */
+        color: #00ff00; /* Text color */
+        text-shadow: 
+            -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000; /* Black shadow to create a pixelated border effect */
+    }
+    .sidequest-btns{
+        background-image: url(img/ms_word_borders/people.png);
+        border-radius: 0px 0px 5px 5px;
+        border-bottom: 2px solid;
+    }
     </style>
     <script>
         goodEveningStartup();
@@ -69,9 +101,9 @@
                 <!--arrow pic-->
                 <div style="border: 5px solid rgb(0, 255, 0); background-image: url('img/ms_word_borders/castle.png'); width: 300px; height: 600px; padding: 5px 5px 5px 5px; margin-bottom: 20px;">
                     <h2 class="side-quest-text"><span class="loud-red" style="font-size: 27px;">!!</span> side quest available <span class="loud-red"style="font-size: 27px;">!!</span></h2>
-                    <div style="border: 2px dotted rgb(0, 255, 0); background-image: url('img/cursed_digital/green_arrow.png'); background-size: cover; background-position: center; width: 300px; height: 400px;">
-                        <!--img src="" style="position: absolute; top: 30%; left: 30%; width: 200px; height: 200px;">
-                        <img src="" style="position: absolute; top: 45%; left: 30%; width: 216px; height: 216px;"-->
+                    <div class="bit-container" style="border: 2px dotted rgb(0, 255, 0); background-image: url('img/cursed_digital/green_arrow.png'); background-size: cover; background-position: center; width: 300px; height: 400px;">
+                        <!--img src="" style="position: absolute; top: 30%; left: 30%; width: 200px; height: 200px;"-->
+                        <img src="img/gifs/anomaly.gif" id="anomaly-gif" title="[_]'s papa: https://giphy.com/abjahanbin" style=" cursor: pointer; margin-top: 120px; position: absolute; top: 50; left: 40%; width: 100px; height: 100px;">
                     </div>
                     <h2 class="side-quest-text">attend call from <span class="loud-red" title="emilylikesmemes">[REDACTED]</span> ?</h2>
                 </div>
