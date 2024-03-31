@@ -7,7 +7,7 @@ function setNavbarUrls(){
     // Update the href attributes of the scrapyard and links links
     document.getElementById('scrapyard-link').href = `${baseUrl}/templates/scrapyard.html`;
     document.getElementById('links-link').href = `${baseUrl}/templates/links.html`;
-    // Blogs link
+    document.getElementById('blog-link').href = `${baseUrl}/templates/blog.html`;
 }
 
 // Startup function

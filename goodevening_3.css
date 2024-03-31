@@ -141,6 +141,18 @@ h1 {
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.5); /* Funky color shadow */
 }
 
+.tab-content-blank {
+    height: 80vh; /* Set height to be larger than viewport */
+    max-width: 900px;
+    margin-top: 50px;
+    overflow: auto; /* Enable vertical scrolling */
+    opacity: 1;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+}
+
 /*Blockquote styles*/
 .blockquote {
     background-color: #f9f9f9;

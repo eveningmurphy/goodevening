@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="goodevening.js"></script>
+    <title>goodevening</title>
+    <link rel="icon" type="image/png" href="../img/cursed_digital/lovely_day.png">
+    <link rel="stylesheet" href="../goodevening_3.css">
+    <link rel="stylesheet" href="../funky.css">
+</head>
+    <style>
+    /* Define styles for the blog post container */
+    .blog-post {
+    background-color: #f8f9fa; /* Light background color */
+    border: 1px solid #ced4da; /* Border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding around the content */
+    margin-bottom: 20px; /* Spacing between blog posts */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+
+    /* Style the title of the blog post */
+    .blog-post h2 {
+    color: #007bff; /* Blue color for the title */
+    font-size: 24px; /* Font size */
+    margin-bottom: 10px; /* Spacing below the title */
+    }
+
+    /* Style the date of the blog post */
+    .blog-post .post-date {
+    color: #6c757d;
+    font-size: 14px;
+    margin-bottom: 10px;
+    }
+
+    /* Style the content of the blog post */
+    .blog-post p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    }
+
+    /* Style links within the blog post */
+    .blog-post a {
+    color: #007bff;
+    text-decoration: underline;
+    }
+
+    /* Retro most recent post button styling */
+    .most-recent-post {
+    background-color: #ff00cc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.most-recent-post:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.most-recent-post:active {
+    transform: scale(0.98);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+}
+</style>
+<script>
+    function mostRecentPost(){
+    // Get the last blog post element
+    const blogPosts = document.querySelectorAll('.blog-post');
+    const lastPost = blogPosts[blogPosts.length - 1];
+
+    // Scroll to the last blog post
+    lastPost.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+}
+
+</script>
+<body>
+
+<div class="background-image"></div>
+<div class="page-container">
+    <div class="navbar">
+        <!--instagram link?-->
+        <ul>
+            <li><a href="../index.html">home</a></li>
+            <li><a href="scrapyard.html">scrapyard</a></li>
+                        <!--li>projects<a href="#"></a></li-->
+            <li><a href="#">blog</a></li>
+            <li><a href="links.html">links</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="tab tab-right" style="border: none; background-color: transparent;">
+            <button class="most-recent-post" onclick="mostRecentPost()">{ goto recent post }</button>
+        </div>
+        <div class="tab-content" style="border: none; background-color: transparent;">
+            <img src="../img/cooltext/mind_palace.png" style="width: 80%;">
+            <div class="blog-post">
+                <h2>~ blog pilot ~</h2>
+                <img src="../img/meme/welcome_2_girlblog.png" style="width: 70%; height: 400px;">
+                <p>i will put my thoughts here sometimes</p>
+                <span class="post-date">22:22 31/03/2024</span>
+            </div>
+            <div class="blog-post">
+                <h2>~ dream reflection ~</h2>
+                <img src="../img/cursed_digital/revealed_in_dream.png" style="width: 70%; height: 400px;">
+                <p>lately, i dream of a complex. long, winding, connecting via halls and narrow stairways. all the people in my life live here, as it expands out into houses and countryside on the outer layers, while opening up into institutional corridors from the 'front'. i go here every night, so vivid it overlays my perception of reality. i had hoped you wouldnt appear here</p>
+                <span class="post-date">22:28 31/03/2024</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
