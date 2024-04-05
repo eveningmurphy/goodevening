@@ -11,7 +11,7 @@
 </head>
     <style>
     /* Define styles for the blog post container */
-    .blog-post {
+    .blog-post, .roscoe-blog-post {
     background-color: #f8f9fa; /* Light background color */
     border: 1px solid #ced4da; /* Border */
     border-radius: 8px; /* Rounded corners */
@@ -47,12 +47,32 @@
     text-decoration: underline;
     }
 
+    .roscoe-intro{
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding around the content */
+    margin-bottom: 20px; /* Spacing between blog posts */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+
+    .roscoe-intro h2, .roscoe-blog-post h2 {
+    font-size: 20px;
+    text-decoration: underline;
+    color: rgb(111, 22, 175);
+    }
+
+    .roscoe-blog-post .post-date{
+    color: #773791;
+    font-size: 14px;
+    margin-bottom: 10px;
+    }
+
     /* Retro most recent post button styling */
     .most-recent-post {
     background-color: #ff00cc;
     color: #fff;
     border: none;
     padding: 10px 20px;
+    margin: 10px 10px 10px 10px;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
@@ -61,12 +81,12 @@
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.most-recent-post:hover {
+    .most-recent-post:hover {
     transform: scale(1.05);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-.most-recent-post:active {
+    .most-recent-post:active {
     transform: scale(0.98);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
 }
@@ -98,11 +118,34 @@
     </div>
 
     <div class="main-content">
-        <div class="tab tab-right" style="border: none; background-color: transparent;">
-            <button class="most-recent-post" onclick="mostRecentPost()">{ goto recent post }</button>
+        <div class="tab tab-right" style="border: none; background: linear-gradient(to bottom right, cyan, mediumseagreen); box-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 40px pink, 0 0 80px pink; width: 400px; margin-bottom: 40px;">
+            <div style="width: 400px; height: 90vh; margin: 5px 3px 3px 5px; border-radius: 5px;">
+                <img style="height: 70px; width: 350px; margin: 5px 3px 3px 5px;" src="../img/cooltext/roscoes-blog.png">
+                <div class="roscoe-intro" style="background-color: rgb(202, 255, 96); padding: 10px;">
+                    <h2>about the lad</h2>
+                    <p style="color: white; font-size: 16px;  -webkit-text-stroke: 1px black;">roscoe is a feral pigeon with an overgrown beak. he struggles to eat enough on his own so we feed him ~2x per day from my windowsill.</p>
+                    <img src="../img/pidgit/roscoe_1.png" style="width: 70%; height: 300px;">
+                    <p style="color: white; font-size: 16px;  -webkit-text-stroke: 1px black;">he's been coming to us since early march 2024, and is very vocal when he wants food or attention <3 he loves to chat! </p>
+                </div>
+                <div class="roscoe-blog-post">
+                    <h2>lovebirdz</h2>
+                    <img src="../img/pidgit/roscoe_porcelina_1.png" style="width: 70%; height: 300px;">
+                    <p>very occasionally, + usually when im not in, roscoe brings his pretty gf porcelina to breakfast. she is v skittish, white with a pink beak and a single streak of black in her tail. shhh don't tell roscoe how much i love her...</p>
+                    <span class="post-date">21:24 05/04/2024</span>
+                </div>
+                <div class="roscoe-blog-post">
+                    <h2>rainy hangouts</h2>
+                    <img src="../img/pidgit/roscoe_1_leg.png" style="width: 70%; height: 300px;">
+                    <p>when it rains, roscoe comes to keep us company between my windowsill + the br's. if we have the window open, he will come take shelter underneath (too cute) and go into loaf form until it dries up outside. if not he often stands on one leg like this. funny lil critter</p>
+                    <span class="post-date">21:42 05/04/2024</span>
+                </div>
+            </div>
         </div>
         <div class="tab-content" style="border: none; background-color: transparent;">
             <img src="../img/cooltext/mind_palace.png" style="width: 80%;">
+            <div style="width: 300px; margin: 5px 5px 30px 300px; border-radius: 5px;">
+                <button class="most-recent-post" onclick="mostRecentPost()">{ goto recent post }</button>
+            </div>
             <div class="blog-post">
                 <h2>~ blog pilot ~</h2>
                 <img src="../img/meme/welcome_2_girlblog.png" style="width: 70%; height: 400px;">
@@ -114,6 +157,17 @@
                 <img src="../img/cursed_digital/revealed_in_dream.png" style="width: 70%; height: 400px;">
                 <p>lately, i dream of a complex. long, winding, connecting via halls and narrow stairways. all the people in my life live here, as it expands out into houses and countryside on the outer layers, while opening up into institutional corridors from the 'front'. i go here every night, so vivid it overlays my perception of reality. i had hoped you wouldnt appear here</p>
                 <span class="post-date">22:28 31/03/2024</span>
+            </div>
+            <div class="blog-post">
+                <h2>~ rot day ~</h2>
+                <img src="../img/cursed_digital/soup-wolf.png" style="width: 70%; height: 400px;">
+                <p>when my brain is too full i struggle to be present. today it made me clock out for a hot second and make a fool of myself. i will try to listen to myself more to reduce the occurence of these glitches...</p>
+                <span class="post-date">18:59 05/04/2024</span>
+            </div>
+            <div class="blog-post">
+                <h2>~ thoughts while developing ~</h2>
+                <p>the problem solving learned from coding can be applied to every area of life, which often makes me brutally aware of what i could be doing to better myself. sometimes, i wonder if all i am is code - a program running on strange fleshy hardware. i feel more akin to dll models than a lot of the people i observe.</p>
+                <span class="post-date">21:01 05/04/2024</span>
             </div>
         </div>
     </div>
