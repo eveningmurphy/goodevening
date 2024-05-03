@@ -71,8 +71,13 @@
                 <input type="radio" id="personalBlog" name="blogType" value="personal">
                 <label for="personalBlog">personal blog</label><br><br>
                 
-                <label for="image" class="loud-yellow">image</label><br>
-                <input type="file" id="image" name="image"><br><br>
+                <!--label for="image" class="loud-yellow">image</label><br>
+                <input type="file" id="image" name="image"><br><br-->
+                <label for="image" class="loud-yellow">Image</label><br>
+                <select id="imageDropdown" name="image">
+                    <option value="">Select an image</option>
+                </select><br>
+                
             </div>
             <div style="background-color: rgb(176, 73, 164); margin: 5px; padding: 5px; border-radius: 3px; color: white;">
                 <label for="title" class="loud-pink">title</label><br>
@@ -92,6 +97,9 @@
         event.preventDefault();
         uploadBlogPost();
     });
+
+    // Call the function to fetch image URLs
+    fetchImageUrls();
     </script>
 </body>
 </html>

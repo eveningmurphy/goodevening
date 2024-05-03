@@ -27,7 +27,7 @@ function convertToHTML(formData) {
     const blogType = formData.get('blogType');
     const title = formData.get('title');
     const content = formData.get('content');
-    const image = formData.get('image');
+    const imageUrl = formData.get('image');
 
     let htmlStructure = '';
 
@@ -39,9 +39,10 @@ function convertToHTML(formData) {
         htmlStructure += ` <h2>~ ${title} ~</h2> `;
     }
 
-    if (image.name){
-        htmlStructure += ` <img src="${image ? '../img/' + image.name : ''}" style="width: 70%; height: auto;">`;
+    if (imageUrl) {
+        htmlStructure += ` <img src="${imageUrl.substring(3)}" style="width: 70%; height: 400px;">`;
     }
+
     htmlStructure += `<p>${content}</p>
         <span class="post-date">${getCurrentTime()}</span>
     </div>`;
@@ -108,4 +109,60 @@ function uploadBlogPost() {
         .catch(error => {
             console.error('Error loading blog.html:', error);
         });
+}
+
+// Function to fetch image URLs from PHP script
+function fetchImageUrls() {
+    fetch('fetch_imgs.php')
+        .then(response => response.json())
+        .then(data => {
+            // Process the list of image URLs
+            populateDropdownMenu(data);
+        })
+        .catch(error => {
+            console.error('Error fetching image URLs:', error);
+        });
+}
+
+// Populate dropdown menu with each image URL (thumbnail and name)
+function populateDropdownMenu(urls) {
+    const dropdown = document.getElementById('imageDropdown');
+    
+    // Clear previous options
+    dropdown.innerHTML = '';
+
+    // Create and append options for each image URL
+    urls.forEach(url => {
+        const option = document.createElement('option');
+        option.value = url;
+        
+        // Append URL to option
+        option.appendChild(document.createTextNode(url));
+
+        // Append option to dropdown
+        dropdown.appendChild(option);
+    });
+
+    // Event listener to display selected image
+    dropdown.addEventListener('change', function() {
+        const selectedImageUrl = this.value;
+        // Create and display 100x100 thumbnail preview
+        
+        // Remove any existing thumbnail preview
+        const existingThumbnail = document.getElementById('thumbnailPreview');
+        if (existingThumbnail) {
+            existingThumbnail.parentNode.removeChild(existingThumbnail);
+        }
+
+        // Create and display 100x100 thumbnail preview
+        const thumbnailPreview = document.createElement('img');
+        thumbnailPreview.id = 'thumbnailPreview';
+        thumbnailPreview.src = selectedImageUrl;
+        thumbnailPreview.setAttribute("style","margin-top: 5px;padding: 5px;");
+        thumbnailPreview.style.width = '100px';
+        thumbnailPreview.style.height = '100px';
+
+        // Insert thumbnail preview after the dropdown
+        this.insertAdjacentElement('afterend', thumbnailPreview);
+    });
 }
