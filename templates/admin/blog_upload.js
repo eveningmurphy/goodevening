@@ -1,26 +1,26 @@
-function adminLogin(username, password){
-    const json_url = '../../admin.json';
+function adminLogin(username, password) {
+    return new Promise((resolve, reject) => {
+        const json_url = '../../admin.json';
 
-    // Send request to retrieve JSON data
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                const json = JSON.parse(xhr.responseText);
-                
-                // Compare username and password with stored credentials
-                if (compare(json.username, username, json.shift) && compare(json.password, password, json.shift)){
-                    return true;
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    const json = JSON.parse(xhr.responseText);
+                    if (compare(json.username, username, parseInt(json.shift)) && compare(json.password, password, parseInt(json.shift))) {
+                        resolve(true);
+                    } else {
+                        resolve(false);
+                    }
+                } else {
+                    console.error('Error fetching JSON:', xhr.statusText);
+                    reject(xhr.statusText);
                 }
-            } else {
-                console.error('Error fetching JSON:', xhr.statusText);
             }
-        }
-    };
-    xhr.open('GET', json_url, true);
-    xhr.send();
-    
-    return false;
+        };
+        xhr.open('GET', json_url, true);
+        xhr.send();
+    });
 }
 
 function convertToHTML(formData) {
@@ -57,7 +57,14 @@ function getCurrentTime() {
     return `${timeString} ${dateString}`;
 }
 
-function uploadBlogPost() {
+function uploadBlogPost(){
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    adminLogin(username, password)
+        .then(login => {
+            if (login) {
+                
     const form = document.getElementById('blogForm');
     const formData = new FormData(form);
     const htmlCode = convertToHTML(formData);
@@ -109,19 +116,26 @@ function uploadBlogPost() {
         .catch(error => {
             console.error('Error loading blog.html:', error);
         });
+            } else {
+                console.log('Login failed');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
 
 // Function to fetch image URLs from PHP script
 function fetchImageUrls() {
-    fetch('fetch_imgs.php')
-        .then(response => response.json())
-        .then(data => {
-            // Process the list of image URLs
-            populateDropdownMenu(data);
-        })
-        .catch(error => {
-            console.error('Error fetching image URLs:', error);
-        });
+        fetch('fetch_imgs.php')
+            .then(response => response.json())
+            .then(data => {
+                // Process the list of image URLs
+                populateDropdownMenu(data);
+            })
+            .catch(error => {
+                console.error('Error fetching image URLs:', error);
+            });
 }
 
 // Populate dropdown menu with each image URL (thumbnail and name)
