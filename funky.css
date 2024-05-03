@@ -1,10 +1,10 @@
 /*Text accents*/
 .loud-pink {
-    color: #ff00ff; /* Pink */
-    font-family: Impact, sans-serif; /* Funky font family */
+    color: rgb(255, 119, 228); /* Pink */
+    font-family: 'Chewy', cursive; /* Funky font family */
     text-shadow: 2px 2px 4px #ff00ff; /* Pink shadow */
     text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 3px; /* Increased letter spacing */
+    letter-spacing: 2px; /* Increased letter spacing */
 }
 
 .loud-yellow {

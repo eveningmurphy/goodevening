@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new blog post</title>
+    <link rel="icon" type="image/png" href="../../img/cursed_digital/lovely_day.png">
+    <link rel="stylesheet" href="../../goodevening_3.css">
+    <link rel="stylesheet" href="../../funky.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../../encrypt.js"></script>
+    <script src="blog_upload.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .postBtn{
+            background-color: #ff00cc;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 10px 10px 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+        h2 {
+            margin-top: 0;
+        }
+        label{
+            margin: 10px;
+            padding: 10px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<div class="background-image"></div>
+<div class="page-container">
+    <div class="main-content">
+        <div class="tab-content" style="background-color:#61ffb5">
+        <h2 class="loud-blue">new blog post ~</h2>
+        <form id="blogForm" enctype="multipart/form-data" style="background-color:aqua; padding: 30px; border-radius: 3px;">
+            <div style="background-color: darkslateblue; margin: 5px; padding: 5px; border-radius: 3px; color: white;">
+                <label for="username" class="loud-orange">admin username</label><br>
+                <input type="text" id="username" name="username" placeholder="Username" required><br>
+                <label for="username" class="loud-orange">admin password</label><br>
+                <input type="password" id="password" name="password" placeholder="Password" required><br>
+            </div>
+            <div style="background-color: rgb(116, 61, 139); margin: 5px; padding: 5px; border-radius: 3px; color: white;">
+                <label for="blogType" class="loud-yellow">blog</label><br>
+                <input type="radio" id="pigeonBlog" name="blogType" value="pigeon" checked>
+                <label for="pigeonBlog" >pigeon blog</label><br>
+                <input type="radio" id="personalBlog" name="blogType" value="personal">
+                <label for="personalBlog">personal blog</label><br><br>
+                
+                <label for="image" class="loud-yellow">image</label><br>
+                <input type="file" id="image" name="image"><br><br>
+            </div>
+            <div style="background-color: rgb(176, 73, 164); margin: 5px; padding: 5px; border-radius: 3px; color: white;">
+                <label for="title" class="loud-pink">title</label><br>
+                <input type="text" id="title" name="title" required><br><br>
+                
+                <label for="content" class="loud-pink">content</label><br>
+                <textarea id="content" name="content" rows="5" required></textarea><br><br>
+            </div>
+            <input class="postBtn" type="submit" value="post">
+          </div>
+        </form>
+    </div>
+</div>
+</div>
+    <script>
+    document.getElementById('blogForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        uploadBlogPost();
+    });
+    </script>
+</body>
+</html>
