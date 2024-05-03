@@ -131,6 +131,12 @@ function populateDropdownMenu(urls) {
     // Clear previous options
     dropdown.innerHTML = '';
 
+    let option = document.createElement('option');
+    option.value = "";
+    option.innerHTML="none";
+    // Append option to dropdown
+    dropdown.appendChild(option);
+
     // Create and append options for each image URL
     urls.forEach(url => {
         const option = document.createElement('option');
