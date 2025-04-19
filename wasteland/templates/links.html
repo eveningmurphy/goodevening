@@ -13,9 +13,42 @@
         font-weight: bold;
         font-family: Arial, sans-serif; /* Specify font family */
     }
+    .soundcloud-gradient-text {
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: transparent;
+        background: linear-gradient(to top, #FF3300, #FF6600); /* Adjust gradient colors as needed */
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    .github-text {
+        background-color: black;
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        font-size: 20px;
+        display: inline-block;
+        letter-spacing: 1px;
+        border-radius: 4px;
+    }
+    .tumblr-text {
+        background-color: #123466;
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+        font-weight: 600;
+        padding: 6px 10px;
+        font-size: 20px;
+        display: inline-block;
+        letter-spacing: 0.5px;
+        border-radius: 4px;
+    }
+
     .links-container {
         width: 80%;
-        height: 100%;
         background-color: #ffff7d; /* Bright pink background */
         border: 5px solid #00FF00; /* Green border */
         border-radius: 20px; /* Rounded corners */
@@ -49,12 +82,21 @@
         <div class="tab-content" style="background-color:rgba(0, 0, 0, 0); height: 90vh;">
             <h1 style="font-family: 'Comic Sans MS'; width: 600px; display: inline-block; background-image: url('../static/img/ms_word_borders/hearts.png'); text-shadow: 2px 2px 4px white;">where 2 find me</h1>
             <div class="links-container">
-                <div class="links-content" style="text-align: left; width: 350px; border: 2px dotted #ff00ff;">
+                <div class="links-content" name="instagram-links" style="text-align: left; width: 350px; border: 2px dotted #ff00ff;">
                     <h2 class="instagram-gradient-text">╠ ┅ instagram ┅ ╣</h2>
                     <p style="font-size: 20px;">personal: <a class="loud-red" href="https://www.instagram.com/eveningmurphy">@eveningmurphy</a></p>
                     <p style="font-size: 20px;">fitness: <a class="loud-blue" href="https://www.instagram.com/stretch.eve">@stretch.eve</a></p>
-                    <p style="font-size: 20px;">art: <a class="loud-yellow" href="https://www.instagram.com/artysmoosh">@artysmoosh</a></p>
+                    <p style="font-size: 20px;">art: <a class="loud-yellow" href="https://www.instagram.com/artysmoosh">@goodevening.art</a></p>
                     <!--p>spam<p-->
+                </div>
+                <div class="links-content" name="audiovisual-links" style="background-color: yellow; padding: 10px; border-radius: 10px;">
+                    <p class="tumblr-link"><span style="background-color: white; padding: 10px; border-radius: 10px;"><span class="tumblr-text" style="font-size: 20px; font-weight: bold;">Tumblr</span></span>: <a class="loud-green" href="https://tumblr.com/smashingpunkins">@smashingpunkins</a>
+                    <p class="soundcloud-link"><span style="background-color: white; padding: 10px; border-radius: 10px;"><span class="soundcloud-gradient-text" style="font-size: 20px; font-weight: bold;">soundcloud</span></span>: <a class="loud-orange" href="https://soundcloud.com/angelbeatswolf">@angelbeatswolf</a></p>
+                    <p class="youtube-link"><span style="font-size: 20px; background-color: white; color: black; padding: 10px; border-radius: 10px;">You<span style="font-size: 20px; background-color: red; color: white; padding: 5px; border-radius: 10px;">Tube</span></span>: <a class="loud-purple" href="https://youtube.com/@angelbeatswolf">@angelbeatswolf</a></p>
+                    </p>
+                </div>
+                <div class="links-content" name="code-links" style="background-color: rgb(0, 0, 0); padding: 10px; border-radius: 10px;">
+                    <p class="github-link"><span style="background-color: white; padding: 10px; border-radius: 10px;"><span class="github-text" style="font-size: 20px; font-weight: bold;">github</span></span>: <a class="loud-green" href="https://github.com/eveningmurphy">@eveningmurphy</a></p>
                 </div>
             </div>
         </div>
