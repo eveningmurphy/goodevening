@@ -50,7 +50,7 @@ function anomalySidequestAccept() {
     }
 
     // Reroute to cube etc ...
-    window.location.href = window.location.origin+"/cube.html";
+    window.location.href = window.location.origin+"/cubequest";
 }
 
 function anomalySidequestDeny(){

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'header.html' %}
+    <meta charset="UTF-8">
+    <title>HELLO QUEST SEEKER</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* prevent scrollbars */
+        }
+        canvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0; /* background */
+        }
+
+        /* Shared overlay frame */
+        #game-frame {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 33vh;
+            border-top: 4px solid #0ff;
+            padding: 16px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: rgba(0, 0, 10, 0.7);
+            z-index: 10;
+            color: #0ff;
+            font-family: monospace;
+            box-shadow: 0 -0 20px #0ff inset;
+        }
+
+        #game-text {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 10px;
+            font-size: 14px;
+        }
+
+        #buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #buttons button {
+            width: 48%;
+            padding: 10px;
+            background: #002;
+            border: 2px solid #0ff;
+            color: #0ff;
+            font-weight: bold;
+            cursor: pointer;
+            text-shadow: 0 0 4px #0ff;
+        }
+
+        #buttons button:hover {
+            background: #0ff;
+            color: #000;
+            text-shadow: 0 0 8px #0ff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cube background -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+let scene, camera, renderer, cube;
+
+function init() {
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 5;
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+}
+
+function animate() {
+    requestAnimationFrame(animate);
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+    renderer.render(scene, camera);
+}
+
+init();
+animate();
+</script>
+
+<!-- Overlay frame -->
+<div id="game-frame">
+    <div id="game-text">Loading...</div>
+    <div id="buttons"></div>
+</div>
+
+<script>
+    const gameText = document.getElementById('game-text');
+    const buttonsDiv = document.getElementById('buttons');
+    
+    // --- Dialogue panels ---
+    const introDialogue = [
+        "welcome, wanderer. here, you find yourself, after entrancement by my interdimensional familiar. the creature was intrigued by you too. i wonder what it is you seek...",
+        "what am i? that is of no importance. i am The Cube, Spatial Geometry representative. i instructed my sweet familiar to seek out a tri-dimensional individual to partake in my census. The Hypercube suggested at this year's Dimensioncon that, maybe next year, i could potentially survey the quinte-dimensional beings! anyway, i am not sure you can fully percieve those fellows. in terms of this year, there is a reward for you involved, of course.",
+        "you must wonder what you stand to gain from all this. i require your curiosity in order to show you, and answers to some questions to ensure you will benefit from what i can provide.",
+        "don't worry, your prize artefact will not be revoked depending on your answers; merely tailored... and your answers collected for our records.",
+        "shall we begin?",
+        "--- The TERRA-ANNUAL SPATIAL INTERDIMENSIONAL COMITTEE CONVENTION (Dimension-Con) Census ---",
+        "--- PARTICIPANT VERSION | DIMENSION: 3 ---",
+    ];
+    
+    const outroDialogue = [
+        "--- Census End ---",
+        "thank you for your answers, fellow tri-dimensional object. the committee greatly appreciates your input. we hope you have had an agreeable experience on the sidequest.",
+        "also, on a personal level, you are a quite fascinating humanoid. i have selected your prize artefact with diligence, i hope it sparks wonder of the world wide web within you.",
+        "farewell, wanderer. until we meet again."
+    ];
+    
+    // --- Game steps (linear, yes/no always progress) ---
+    const gameSteps = [
+        "1.   did religion come before civilisation in humanity's evolution?",
+        "2.   do you think humanity will ever develop definitive Artificial General Intelligence?",
+        "3.   if you were given access to the Akashic Record, would you gaze into its infinite knowledge?",
+        "4.   would you be contented with a ripe red apple?"
+    ];
+    
+    // --- Prize URLs ---
+    const prizeArtefactURLs = {
+        allNo: "https://www.youtube.com/watch?v=jdRCNM2k42o&list=RDjdRCNM2k42o",
+        allYes: "https://kawaiiyuri.com/fishy/",
+        mixed: "https://www.boredbutton.com/"
+    };
+    
+    let dialogueIndex = 0;
+    let gameIndex = 0;
+    let yesCount = 0;
+    let noCount = 0;
+    
+    // --- Scene controller ---
+    function startScene() {
+        dialogueIndex = 0;
+        yesCount = 0;
+        noCount = 0;
+        showDialogue(introDialogue, startGame);
+    }
+    
+    function endScene() {
+        dialogueIndex = 0;
+        showDialogue(outroDialogue, () => {
+            // Determine prize URL
+            let url;
+            if (yesCount === 0) {
+                url = prizeArtefactURLs.allNo;
+            } else if (noCount === 0) {
+                url = prizeArtefactURLs.allYes;
+            } else {
+                url = prizeArtefactURLs.mixed;
+            }
+            window.location.href = url;
+        });
+    }
+    
+    // --- Dialogue handler ---
+    function showDialogue(dialogueArray, callback) {
+        const currentLine = dialogueArray[dialogueIndex];
+        gameText.innerHTML = currentLine;
+    
+        // Special handling for "shall we begin?"
+        if (currentLine.toLowerCase().includes("shall we begin")) {
+            buttonsDiv.innerHTML = `
+                <button id="no-btn">No</button>
+                <button id="yes-btn">Yes</button>
+            `;
+            document.getElementById("yes-btn").onclick = () => {
+                dialogueIndex++;
+                showDialogue(dialogueArray, callback);
+            };
+            document.getElementById("no-btn").onclick = () => {
+                dialogueIndex = 0; // loop back to start
+                showDialogue(dialogueArray, callback);
+            };
+            return;
+        }
+    
+        // Default navigation for intro/outro dialogue
+        buttonsDiv.innerHTML = `
+            <button id="prev-btn" ${dialogueIndex === 0 ? "disabled" : ""}>Prev</button>
+            <button id="next-btn">${dialogueIndex === dialogueArray.length - 1 ? "Next (continue)" : "Next"}</button>
+        `;
+    
+        document.getElementById("next-btn").onclick = () => {
+            if (dialogueIndex < dialogueArray.length - 1) {
+                dialogueIndex++;
+                showDialogue(dialogueArray, callback);
+            } else {
+                callback();
+            }
+        };
+    
+        document.getElementById("prev-btn").onclick = () => {
+            if (dialogueIndex > 0) {
+                dialogueIndex--;
+                showDialogue(dialogueArray, callback);
+            }
+        };
+    }
+    
+    // --- Game handler ---
+    function gameStep() {
+        if (gameIndex >= gameSteps.length) {
+            endScene();
+            return;
+        }
+    
+        gameText.innerHTML = gameSteps[gameIndex];
+    
+        // No on left, Yes on right
+        buttonsDiv.innerHTML = `
+            <button id="no-btn">No</button>
+            <button id="yes-btn">Yes</button>
+        `;
+    
+        document.getElementById("yes-btn").onclick = () => { yesCount++; nextGameStep(); };
+        document.getElementById("no-btn").onclick = () => { noCount++; nextGameStep(); };
+    }
+    
+    function nextGameStep() {
+        gameIndex++;
+        gameStep();
+    }
+    
+    function startGame() {
+        gameIndex = 0;
+        gameStep();
+    }
+    
+    // Start whole scene
+    startScene();
+    </script>
+    
+
+</body>
+</html>

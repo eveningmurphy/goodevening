@@ -24,7 +24,6 @@ def scrapyard():
     return render_template("scrapyard.html", entries=entries)
 
 @app.route('/guestbook', methods=["GET", "POST"])
-
 def guestbook():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
@@ -40,6 +39,9 @@ def guestbook():
     # maybe redirect to a confirmation/sign-up option URL?
     return redirect(url_for("scrapyard"))
 
+@app.route('/cubequest')
+def cubequest():
+    return render_template('cubequest.html')
 
 if __name__ == '__main__':
      app.run(debug=True)
