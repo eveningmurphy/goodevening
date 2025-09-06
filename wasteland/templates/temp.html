@@ -1,0 +1,37 @@
+        <!-- teaser panels hub -->
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 15px;">
+
+            <!-- scrapbook teaser -->
+            <div style="flex: 1 1 250px; border: 3px dashed #ff7f00; background: #fffbe6; padding: 10px;">
+                <h3 style="font-family: 'Comic Sans MS'; color:#ff007f;">✿ scrapbook ✿</h3>
+                <p style="font-family: 'Comic Sans MS'; font-size: 14px; text-indent: 15px;">
+                    a stash of strange .gifs, glitched artefacts, & cursed images...  
+                </p>
+                <div style="text-align:center;">
+                    <img src="../static/img/gifs/sparkly_star.gif" style="width:60px; height:60px;">
+                </div>
+                <p style="font-size: 12px; text-align: right;"><a href="/scrapbook">explore →</a></p>
+            </div>
+
+            <!-- dev blog teaser -->
+            <div style="flex: 1 1 250px; border: 3px dashed #00ccff; background: #e6faff; padding: 10px;">
+                <h3 style="font-family: 'Comic Sans MS'; color:#0066ff;">✎ dev blog ✎</h3>
+                <p style="font-family: 'Comic Sans MS'; font-size: 14px; text-indent: 15px;">
+                    latest: <em>“guestbook testing 001”</em>  
+                </p>
+                <p style="font-size: 12px; text-align: right;"><a href="/devblog">read more →</a></p>
+            </div>
+
+            <!-- guestbook teaser -->
+            <div style="flex: 1 1 250px; border: 3px dashed #66cc66; background: #f0fff0; padding: 10px;">
+                <h3 style="font-family: 'Comic Sans MS'; color:#008000;">☀ guestbook ☀</h3>
+                <div style="font-size: 14px; font-family: 'Comic Sans MS'; max-height: 80px; overflow-y: auto;">
+                    {% for entry in entries[:2] %}
+                        <p><strong>{{ entry.name }}</strong>: {{ entry.message }}</p>
+                    {% endfor %}
+                </div>
+                <p style="font-size: 12px; text-align: right;"><a href="/guestbook">sign it →</a></p>
+            </div>
+
+        </div>
+        <!-- end teaser panels -->

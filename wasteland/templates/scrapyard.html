@@ -4,6 +4,27 @@
     {% include 'header.html' %}
     <title>scrapyard - goodevening</title>
 </head>
+<style>
+#guestbook-section{
+    position: relative; 
+    border: 6px double #ff99cc; 
+    background: #fffafc url('../static/img/scrapbook/crumpled-paper-1.jpg') repeat; 
+    padding: 15px; 
+    margin: 20px 0; 
+    border-radius: 12px; 
+    box-shadow: 3px 3px 0px #000;
+
+    max-height: 150vh;       /* 1.5 × viewport height */
+    overflow-y: auto;        /* vertical scroll when content exceeds max-height */
+}
+
+.tab-gif{
+    width: 200px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make it round */
+    box-shadow: 0 0 20px rgba(1, 1, 1, 0.5); /* Add shadow */
+}
+</style>
 <body>
 
 <div class="background-image"></div>
@@ -12,17 +33,103 @@
 
     <div class="main-content">
         <div class="tab tab-left">
-            <h2>audio</h2>
+            <!--h2>audio</h2-->
+        
+            <div style="margin-top: 10px; padding: 12px; background: #0a0a0f; border: 3px solid #ff00ff; border-radius: 12px; box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff; font-family: monospace; font-size: 11px; line-height: 1.2; white-space: pre; overflow-x: auto; color: #00ffee; text-shadow: 0 0 5px #00ffff, 0 0 8px #ff00ff;">
+        ⠀⠀⠀⢸⣦⡀⠀⠀⠀⠀⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+        ⠀⠀⠀⢸⣏⠻⣶⣤⡶⢾⡿⠁⠀⢠⣄⡀⢀⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⣀⣼⠷⠀⠀⠁⢀⣿⠃⠀⠀⢀⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠴⣾⣯⣅⣀⠀⠀⠀⠈⢻⣦⡀⠒⠻⠿⣿⡿⠿⠓⠂⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠉⢻⡇⣤⣾⣿⣷⣿⣿⣤⠀⠀⣿⠁⠀⠀⠀⢀⣴⣿⣿⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠸⣿⡿⠏⠀⢀⠀⠀⠿⣶⣤⣤⣤⣄⣀⣴⣿⡿⢻⣿⡆⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠟⠁⠀⢀⣼⠀⠀⠀⠹⣿⣟⠿⠿⠿⡿⠋⠀⠘⣿⣇⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⢳⣶⣶⣿⣿⣇⣀⠀⠀⠙⣿⣆⠀⠀⠀⠀⠀⠀⠛⠿⣿⣦⣤⣀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⣹⣿⣿⣿⣿⠿⠋⠁⠀⣹⣿⠳⠀⠀⠀⠀⠀⠀⢀⣠⣽⣿⡿⠟⠃
+        ⠀⠀⠀⠀⠀⢰⠿⠛⠻⢿⡇⠀⠀⠀⣰⣿⠏⠀⠀⢀⠀⠀⠀⣾⣿⠟⠋⠁⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⣰⣿⣿⣾⣿⠿⢿⣷⣀⢀⣿⡇⠁⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀
+            </div>
+        
+            <!-- optional glowing icon
+            <div style="text-align: right; margin-top: 8px;">
+                <img src="../static/img/placeholders/planet_icon.gif" alt="sticker" style="width:32px; height:32px; filter: drop-shadow(0 0 6px #ff00ff) drop-shadow(0 0 10px #00ffff);">
+            </div>  -->
         </div>
+         
         <div class="tab tab-right">
-            <h2>lorem ipsum</h2>
-        </div>
-        <div class="tab-content">
+
+
+            <div style="background-image: url('../static/img/gifs/under-construction.gif'); width: 300px; height: 250px;">
+                <img src="../static/img/gifs/under-construction.gif" style="margin-top: 70px;">
+            </div>
+
+            <hr>
+
+            <h1>dev blog</h1>
+
+            <hr>
+
+            <!-- digital artefacts -->
             <h1>digital hoarding stockpile</h1>
             <div class="blockquote">
                 <h2>view the<a href="#" class="loud-red">[media gallery]</a>...</h2>
                 <!-- gallery sections preview: pigeons, balter, etc.-->
             </div>
+
+        </div>
+
+        <div class="tab-content">
+            <!-- guestbook section -->
+            <div id="guestbook-section" alt="paper bg: https://www.textures4photoshop.com/tex/thumbs/crumpled-paper-texture-high-res-thumb31.jpg">
+                
+                <!-- top left corner icons -->
+                <img src="../static/img/scrapbook/gilded-star.png" alt="star"
+                    style="position:absolute; top:-15px; left:-15px; width:80px; height:80px;">
+                <img src="../static/img/scrapbook/mercury-grimyglitterpop.gif" alt="https://64.media.tumblr.com/b363ce2d91cf62431aaeb11f7704eb42/tumblr_o95oksdDiC1vx777ao1_1280.gif"
+                    style="position:absolute; bottom:-20px; right:-15px; width:100px; height:60px;">
+
+                <!-- title -->
+                <h1 style="font-family: 'Comic Sans MS'; font-size: 26px; color: #480c4d; text-shadow: 1px 1px #000; text-align: center;">
+                    ༺୨♡︎୧༺ guestbook ༺୨♡︎୧༺
+                </h1>
+
+                <!-- form -->
+                <form method="post" action="{{ url_for('guestbook') }}" style="margin-bottom: 20px; text-align: center;">
+                    <input type="text" name="name" placeholder="your name" required
+                        style="font-family:'Comic Sans MS'; font-size:14px; padding:5px; border:2px dotted #ff99cc; border-radius: 8px; margin:5px; background:#fff0f8;">
+                    <br>
+                    <textarea name="message" placeholder="leave a note..." required
+                            style="font-family:'Comic Sans MS'; font-size:14px; padding:6px; width: 80%; height:80px; border:2px dashed #99ccff; border-radius: 10px; background:#f0faff; margin-top:10px;"></textarea>
+                    <br>
+                    <button type="submit" style="margin-top: 10px; padding: 5px 12px; border:3px outset #cc99ff; background:#ffe6ff; font-family:'Comic Sans MS'; font-size:14px; cursor:pointer;">
+                        sign
+                    </button>
+                </form>
+
+                <!-- guestbook entries -->
+            {% if entries %}
+            <div id="signatures" style="border:3px solid #ccff00; background:#af69ef; padding:8px; margin-top:20px; border-radius:8px;">
+                <h3 style="font-family:'Comic Sans MS'; font-size:16px; color:#330099; margin:0 0 5px 0; text-align:center;">
+                    signatures:
+                </h3>
+
+                <div class="entries">
+                    {% for entry in entries %}
+                        <div class="entry" style="border:3px groove #ffccff; background:#fff; margin:10px 0; padding:10px; border-radius: 10px; box-shadow: 2px 2px 0px #999;">
+                            <strong style="color:#ff3399;">{{ entry.name }}</strong> says: <br>
+                            <blockquote style="margin:8px; padding:8px; border-left:4px solid #99ccff; background:#f9f9ff; font-family:'Comic Sans MS'; font-size:14px;">
+                                {{ entry.message }}
+                            </blockquote>
+                            <em style="font-size:11px; color:#666;">{{ entry.timestamp }}</em>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
         </div>
     </div>
 </div>
