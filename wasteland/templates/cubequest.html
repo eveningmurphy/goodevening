@@ -128,7 +128,7 @@ animate();
         "farewell, wanderer. until we meet again."
     ];
     
-    // --- Game steps (linear, yes/no always progress) ---
+    // --- Game steps ---
     const gameSteps = [
         "1.   did religion come before civilisation in humanity's evolution?",
         "2.   do you think humanity will ever develop definitive Artificial General Intelligence?",
@@ -188,8 +188,14 @@ animate();
                 showDialogue(dialogueArray, callback);
             };
             document.getElementById("no-btn").onclick = () => {
-                dialogueIndex = 0; // loop back to start
-                showDialogue(dialogueArray, callback);
+                // Instead of looping back, show special farewell panel
+                gameText.innerHTML = "no concerns, wanderer. please leave a kind note for the host and continue on your journey.";
+                buttonsDiv.innerHTML = `
+                    <button id="continue-btn">Next (continue)</button>
+                `;
+                document.getElementById("continue-btn").onclick = () => {
+                    window.location.href = "/scrapyard";
+                };
             };
             return;
         }
@@ -226,7 +232,6 @@ animate();
     
         gameText.innerHTML = gameSteps[gameIndex];
     
-        // No on left, Yes on right
         buttonsDiv.innerHTML = `
             <button id="no-btn">No</button>
             <button id="yes-btn">Yes</button>
@@ -248,7 +253,7 @@ animate();
     
     // Start whole scene
     startScene();
-    </script>
+    </script>    
     
 
 </body>
