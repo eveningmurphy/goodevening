@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 
-from db import get_db_connection, get_guestbook_entries
+from application.db import get_db_connection, get_guestbook_entries
 
 app = Flask(__name__)
 
