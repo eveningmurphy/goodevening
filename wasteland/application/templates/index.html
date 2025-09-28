@@ -179,9 +179,6 @@
                 <div style="text-align: center; margin-top: 5px;">
                     <img src="../static/img/gifs/sparkly_star.gif" alt="sparkly star" style="width: 90px; height: 90px; border: 3px dashed #ff7f00; background: white; padding: 4px;">
                 </div>
-                <p style="font-family: 'Comic Sans MS'; font-size: 14px; margin: 8px; padding-left: 25px; text-indent: 15px; background: #e6faff; border-radius: 8px; border: 2px dotted #00ccff;">
-                    pls enjoy ur stay & don't forget to <a class="loud-red" href="{{ url_for('scrapyard') }}">sign the guestbook!!!</a>  
-                </p>
                 <p style="font-family: 'Comic Sans MS'; font-size: 11px; margin: 5px; text-align: right; color: #666;">
                     <span style="color:#ff007f;">♥</span> 
                     <span style="cursor: help;">8-bit gifs by <a href="https://www.soundcloud.com/one-pence-an-hour">Jago</a></span>
@@ -222,28 +219,6 @@
                 </div>
             </div>
 
-            <!-- teaser panels hub -->
-            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 15px;">
-
-                <!-- guestbook teaser -->
-                <div id="guestbook-teaser" style="flex: 1 1 250px; border: 3px dashed #66cc66; background: #f0fff0; padding: 10px;">
-                    <h3 style="font-family: 'Comic Sans MS'; color:#008000;">☀ guestbook ☀</h3>
-                    <div id="guestbook-teaser" style="font-size: 14px; font-family: 'Comic Sans MS'; max-height: 80px; overflow-y: auto;">
-                        {% for entry in entries[:2] %}
-                            <p><strong>{{ entry.name }}</strong>: {{ entry.message }}</p>
-                        {% endfor %}
-                    </div>
-                    <div class="teaser-buttons">
-                        <a href="{{ url_for('scrapyard') }}">𓆩♡𓆪 see more</a>
-                        <a href="{{ url_for('guestbook') }}">sign it →</a>
-                        <!--h3 style="font-family: 'Comic Sans MS'; color:#008000;">𓆩♡𓆪 see more ... ↣</h3>
-                        <p style="font-size: 20px; text-align: right;"><a href="{{ url_for('scrapyard') }}">sign it →</a></p-->
-                    </div>
-                </div>
-
-            </div>
-            <p class="teaser-ellipsis">...</p>
-            <!-- end teaser panels -->
             </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 
-from db import get_db_connection, get_guestbook_entries # replace application.db here
+# from db import get_db_connection, get_guestbook_entries # replace application.db here
 
 app = Flask(__name__)
 
@@ -8,14 +8,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    entries = get_guestbook_entries()
-    return render_template('index.html', entries=entries)
+    # entries = get_guestbook_entries()
+    return render_template('index.html') # , entries=entries
 
 @app.route('/links')
 def links():
     return render_template('links.html')
 
-@app.route('/scrapyard', methods=["GET", "POST"])
+"""@app.route('/scrapyard', methods=["GET", "POST"])
 def scrapyard():
     entries = get_guestbook_entries()
 
@@ -37,7 +37,7 @@ def guestbook():
         )
         conn.commit()
     # maybe redirect to a confirmation/sign-up option URL?
-    return redirect(url_for("scrapyard"))
+    return redirect(url_for("scrapyard"))"""
 
 @app.route('/cubequest')
 def cubequest():
