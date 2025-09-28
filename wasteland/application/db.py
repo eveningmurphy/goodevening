@@ -3,10 +3,11 @@ import mysql.connector
 # --- DB connection helper ---
 def get_db_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="wasteland"
+        host="serverless-eu-central-1.sysp0000.db1.skysql.com",
+        user="dbpwf26365997",
+        password="*2Bldk?i2MN1J4.t3kw2ECp",
+        database="wasteland",
+        port=4005
     )
 
 def get_guestbook_entries():
