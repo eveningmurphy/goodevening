@@ -1,12 +1,15 @@
 import mysql.connector
 
+from database.config import DATABASE, DATABASE_HOST, DATABASE_PASSWORD, DATABASE_USER, PORT # for local development 
+
+
 # --- DB connection helper ---
 def get_db_connection():
     return mysql.connector.connect(
-        host="***",
-        user="***",
-        password="***",
-        database="wasteland"
+        host=DATABASE_HOST,
+        user=DATABASE_USER,
+        password=DATABASE_PASSWORD,
+        database=DATABASE
     )
 
 def get_guestbook_entries():
